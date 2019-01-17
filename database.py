@@ -8,5 +8,13 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def function(parameter):
-    pass
+def add_recipe(name, description, time, keyword):
+	recipe_object = Recipe(
+		name=nam,
+		description=description,
+		time=time,
+		keyword=keyword)
+	print(recipe_object)
+	session.add(recipe_object)
+	session.commit()
+   

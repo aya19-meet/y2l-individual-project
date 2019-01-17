@@ -6,5 +6,10 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 # Write your classes here :
-class Product(Base):
-    pass
+class Recipe(Base):
+    __tablename__ = 'recipes'
+    _id = Column(Integer, primary_key=True)
+    name = Column(String)
+    description = Column(String)
+    time = Column(String)
+    keyword = Column(String)
