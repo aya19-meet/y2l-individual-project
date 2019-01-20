@@ -13,3 +13,4 @@ class Recipe(Base):
     description = Column(String)
     time = Column(String)
     keyword = Column(String)
+    ingredients = Column(String)
