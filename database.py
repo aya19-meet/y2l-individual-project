@@ -8,16 +8,49 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_recipe(name, description, time, keyword, ingredients):
+def add_recipe(name, description, time, ingredients, vegan=False, breakfast=False, dessert=False, glutenfree=False, quicksnacks=False, keto=False):
 	recipe_object = Recipe(
-		name=nam,
+		name=name,
 		description=description,
 		time=time,
-		keyword=keyword,
+		vegan=vegan,
+		breakfast=breakfast,
+		dessert=dessert,
+		glutenfree=glutenfree,
+		quicksnacks=quicksnacks,
+		keto=keto,
 		ingredients=ingredients)
-	print(recipe_object)
+	print(ingredients)
+	print(recipe_object.ingredients)
 	session.add(recipe_object)
 	session.commit()
 
+def recipe_query_vegan(vegan):
 
+	recipes = session.query(Recipe).filter_by(vegan=True).all()
+	return recipes
+
+def recipe_query_breakfast(breakfast):
+
+	recipes = session.query(Recipe).filter_by(breakfast=True).all()
+	return recipes
+
+def recipe_query_quicksnacks(quicksnacks):
+
+	recipes = session.query(Recipe).filter_by(quicksnacks=True).all()
+	return recipes
    
+def recipe_query_keto(keto):
+
+	recipes = session.query(Recipe).filter_by(keto=True).all()
+	return recipes
+
+def recipe_query_dessert(dessert):
+
+	recipes = session.query(Recipe).filter_by(dessert=True).all()
+	return recipes
+
+def recipe_query_glutenfree(glutenfree):
+
+	recipes = session.query(Recipe).filter_by(glutenfree=True).all()
+	return recipes

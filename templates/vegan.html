@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vegan</title>
+    </head>
+
+    <body id="interest_body">
+
+        <h1 id= "as"> These are the vegan recipes</h1>
+        <br>
+        
+        
+
+
+    {% for recipe in recipes %}
+        
+        <p> {{recipe.name}}.<br> Description:{{recipe.description}} <br> You will need: {{recipe.ingredients}}. <br> Prep time: {{recipe.time}}. 
+    {%endfor%}
+        </center>
+    </body >
+</html>
