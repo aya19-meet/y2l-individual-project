@@ -2,78 +2,7 @@
 <html>
 <head>
 	<title>cookket</title>
-  <style>
-
-    .row{
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-
-
-    .hero{
-      position: absolute;
-      width: 1140px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
-
-    header{
-      background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(hero.jpg);
-      height: 100vh;
-      background-position: center;
-      background-size: cover; 
-    }
-
-    h1{
-      color: white;
-    }
-
-    .main-nav{
-      list-style: none;
-      float: right;
-      margin-top: 60px;
-    }
-    .main-nav li {
-      display: inline-block;
-      margin-left: 20px;
-    }
-
-    .main-nav li a{
-      color: white;
-      text-decoration: none;
-      font-size: 100%;
-      font-weight: bold;
-
-    }
-
-    .main-nav li a:hover { 
-    color: #e67e22;
-    border-bottom: 2px solid #e67e22;
-    transition: all 0.5s ease-in;
-    padding: 15px 0;
-     }
-
-    .btn {
-      border: 1px solid #e67e22;
-      padding: 15px 30px;
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      margin-right: 20px;
-      background-color: #e67e22;
-    }
-
-    .button-awesome{
-      margin-top: 50px;
-    }
-    .btn:hover{
-      background-color: white;
-      color: #e67e22;
-      transition: all 0.5s ease-in;
-
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 <body>
 
 <header>
@@ -87,6 +16,7 @@
       <li> <a href="keto"> Keto </a></li>
     </ul>
   </div>
+  <h2 class="h2">Cookette</h2>
  <div class="hero"> 
 	<h1>Welcome to cookkette <br> Share and get unique recipes</h1>
   <div class="button-awesome">

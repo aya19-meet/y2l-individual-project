@@ -3,7 +3,7 @@ from model import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('sqlite:///database.db')
+engine = create_engine('sqlite:///game.db?check_same_thread=False')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -53,4 +53,8 @@ def recipe_query_dessert(dessert):
 def recipe_query_glutenfree(glutenfree):
 
 	recipes = session.query(Recipe).filter_by(glutenfree=True).all()
+	return recipes
+
+def recipe_query():
+	recipes = session.query(Recipe).all()
 	return recipes

@@ -54,6 +54,11 @@ def quicksnacks():
     recipes=recipe_query_quicksnacks(quicksnacks)
     return render_template('quicksnacks.html', recipes=recipes)
 
+@app.route('/discover')
+def discover():
+    recipes=recipe_query()
+    return render_template('discover.html', recipes=recipes)
+
 
 
 

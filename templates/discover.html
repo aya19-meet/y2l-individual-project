@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Discover recipes</title>
+    </head>
+
+    <body>
+        <h1>Discover you next favorite dish!</h1>
+        {% for recipe in recipes %}
+        
+        <p> {{recipe.name}}.<br> Description:{{recipe.description}} <br> You will need: {{recipe.ingredients}}. <br> Prep time: {{recipe.time}}. 
+    {%endfor%}
+    </body >
+</html>
