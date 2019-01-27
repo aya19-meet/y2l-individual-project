@@ -13,17 +13,19 @@ def add_recipe(name, description, time, ingredients, vegan=False, breakfast=Fals
 		name=name,
 		description=description,
 		time=time,
+		ingredients=ingredients,
 		vegan=vegan,
 		breakfast=breakfast,
 		dessert=dessert,
 		glutenfree=glutenfree,
 		quicksnacks=quicksnacks,
-		keto=keto,
-		ingredients=ingredients)
+		keto=keto)
 	print(ingredients)
 	print(recipe_object.ingredients)
 	session.add(recipe_object)
 	session.commit()
+
+#add_recipe("ab","a","a","ab",True,True,True,True,True,True)
 
 def recipe_query_vegan(vegan):
 

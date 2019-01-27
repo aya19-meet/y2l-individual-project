@@ -20,15 +20,36 @@ def add_recipe_route():
         name = request.form['name']
         description = request.form['description'] 
         time = request.form['time']
-        vegan = request.form['vegan']
         ingredients = request.form['ingredients']
-        breakfast = request.form['breakfast']
-        quicksnacks = request.form['quicksnacks']
-        glutenfree = request.form['glutenfree']
-        dessert = request.form['dessert']
-        keto = request.form['keto']
+        print(request)
+        if 'vegan' in request.form:
+            vegan = True
+        else:
+            vegan = False
+        if 'breakfast' in request.form:
+            breakfast = True
+        else: 
+            breakfast = False
+        if 'quicksnacks' in request.form:
+            quicksnacks = True
+        else:
+            quicksnacks = False
+
+        if 'glutenfree' in request.form:
+            glutenfree = True
+        else: 
+            glutenfree = False
+        if 'dessert' in request.form:
+            dessert = True
+        else: 
+            dessert = False
+        if 'keto' in request.form:
+            keto = True
+        else: 
+            keto = False
         add_recipe(name, description, time, ingredients, vegan, breakfast, dessert, glutenfree, quicksnacks, keto)
         return render_template("home.html")
+
 @app.route('/vegan')
 def vegan():
     recipes=recipe_query_vegan(vegan)

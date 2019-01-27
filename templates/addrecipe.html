@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+        body{
+        height: 100vh;
+        margin:0px;
+
+       /* background: -webkit-linear-gradient( to  top, #e67e22  , white);
+        background: -moz-linear-gradient( to  top, #e67e22  , white);
+        background: -ms-linear-gradient( to  top,   #e67e22  , white);
+        background: -o-linear-gradient( to  top,   #e67e22  , white);
+        background: linear-gradient( to  top,  #e67e22 , white); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        background-repeat:no-repeat;
+        background-attachment: fixed;*/
+        }
+    .enjoy {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px 20px;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  font: normal 16px/normal Tahoma, Geneva, sans-serif;
+  color: rgba(0,142,198,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(252,252,252,1);
+  -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 0 0 0 rgba(255,255,255,0.66) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+    .boton{border: 1px solid #e67e22;
+      padding: 15px 30px;
+      color: #e67e22;
+      text-decoration: none;
+      border-radius: 12px;
+      margin-right: 20px;
+      background-color: white;
+      font-size: 15px;
+    }
+    .boton:hover{
+      background-color: #e67e22;
+      color: white;
+      transition: all 0.5s ease-in;
+
+    }
+    </style>
         <title> Add a recipe </title>
     </head>
     <body id="adding">
+    <center>
     <div id="adding_content">
         
         <h1 class= "font">Add your recipe:</h1>
         <br>
 
         <form action="/add_recipe" method="POST">
-         <h3 class="title" style="font-family:Comfortaa">Name:</h3>
-        <input type="text" class="form-control" name="name" placeholder="Insert the name of the recipe" style="font-family:Comfortaa">
+         <h3>Name:</h3>
+        <input type="text" class="enjoy" name="name" placeholder="Insert the name of the recipe" style="font-family:Comfortaa">
         <br>
         <h3 class="title" style="font-family:Comfortaa">This recipe is:</h3>
         <div id="keywords" style="font-family:Comfortaa">
-        <input type="checkbox" name="vegan" value="True">Vegan
-        <input type="checkbox" name="glutenfree" value="True">Gluten-free
-        <input type="checkbox" name="quicksnacks" value="True">Quick Snacks
-        <input type="checkbox" name="keto" value="True">Keto
-        <input type="checkbox" name="breakfast" value="True"> Breakfast
-       <input type="checkbox" name="dessert" value="True">Healthy Dessert
+        <input type="checkbox" name="vegan" value=True>Vegan
+        <input type="checkbox" name="glutenfree" value=True>Gluten-free
+        <input type="checkbox" name="quicksnacks" value=True>Quick Snacks
+        <input type="checkbox" name="keto" value=True>Keto
+        <input type="checkbox" name="breakfast" value=True> Breakfast
+       <input type="checkbox" name="dessert" value=True>Healthy Dessert
         </div>
         <br>
 
@@ -35,7 +92,7 @@
         <br>
 
         <br>
-        <input type="submit" class="btn btn-light" value="Submit" style="font-family:Comfortaa">
+        <input type="submit" class="boton" value="Submit">
         <br>
 
        
@@ -46,6 +103,7 @@
         </form>
         
     </div>
+    </center>
     </center>
     </body>
 </html>
