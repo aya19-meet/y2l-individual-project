@@ -1,5 +1,5 @@
 body{
-  font-family: tahoma;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -35,7 +35,7 @@ body{
     .main-nav{
       list-style: none;
       float: right;
-      margin-top: 60px;
+      margin-top: 45px;
     }
     .main-nav li {
       display: inline-block;

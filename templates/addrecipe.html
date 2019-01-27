@@ -5,6 +5,7 @@
         body{
         height: 100vh;
         margin:0px;
+        font-family: Tahoma, Geneva, sans-serif;
 
        /* background: -webkit-linear-gradient( to  top, #e67e22  , white);
         background: -moz-linear-gradient( to  top, #e67e22  , white);
@@ -29,7 +30,7 @@
   -webkit-border-radius: 15px;
   border-radius: 15px;
   font: normal 16px/normal Tahoma, Geneva, sans-serif;
-  color: rgba(0,142,198,1);
+  color: black;
   -o-text-overflow: clip;
   text-overflow: clip;
   background: rgba(252,252,252,1);
@@ -56,22 +57,26 @@
       transition: all 0.5s ease-in;
 
     }
+    .waseem{
+        margin-left: 20px;
+    }
+
     </style>
         <title> Add a recipe </title>
     </head>
     <body id="adding">
-    <center>
     <div id="adding_content">
         
-        <h1 class= "font">Add your recipe:</h1>
+        <h1 class= "waseem">Add your recipe:</h1>
         <br>
-
+        <center>
         <form action="/add_recipe" method="POST">
          <h3>Name:</h3>
-        <input type="text" class="enjoy" name="name" placeholder="Insert the name of the recipe" style="font-family:Comfortaa">
+        <input type="text" class="enjoy" name="name" placeholder="Insert the name of the recipe">
         <br>
-        <h3 class="title" style="font-family:Comfortaa">This recipe is:</h3>
-        <div id="keywords" style="font-family:Comfortaa">
+        <h3 class="title">This recipe is:</h3>
+        <div>
+  
         <input type="checkbox" name="vegan" value=True>Vegan
         <input type="checkbox" name="glutenfree" value=True>Gluten-free
         <input type="checkbox" name="quicksnacks" value=True>Quick Snacks
@@ -81,14 +86,15 @@
         </div>
         <br>
 
-        <h3 class= "title" style="font-family:Comfortaa">Ingredients: </h3>
-        <input type="text" name="ingredients" placeholder="Ingredients" style="font-family:Comfortaa"> 
+
+        <h3 class= "title">Ingredients: </h3>
+        <input type="text" name="ingredients" placeholder="Ingredients"> 
         <br>
-         <h3 class= "title" style="font-family:Comfortaa">Prep time:</h3>
-        <input type="text" name="time" class="form-control" style="font-family:Comfortaa" placeholder="Insert the prep time of the recipe">
+         <h3 class= "title">Prep time:</h3>
+        <input type="text" name="time" class="form-control" placeholder="Insert the prep time of the recipe">
         <br>
-        <h3 class= "title" style="font-family:Comfortaa">Describe/ add to your recipe:</h3>
-        <input type="text" name="description" placeholder="Description" style="font-family:Comfortaa">
+        <h3 class= "title">Describe/ add to your recipe:</h3>
+        <textarea rows="10" cols="30" name="description" placeholder="Description"></textarea>
         <br>
 
         <br>
@@ -103,7 +109,6 @@
         </form>
         
     </div>
-    </center>
     </center>
     </body>
 </html>

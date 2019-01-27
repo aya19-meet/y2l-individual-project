@@ -78,9 +78,12 @@ def quicksnacks():
 @app.route('/discover')
 def discover():
     recipes=recipe_query()
+    recipes.reverse()
     return render_template('discover.html', recipes=recipes)
 
-
+@app.route('/try')
+def tryout():
+    return render_template('try.html')
 
 
 if __name__ == '__main__':
