@@ -53,33 +53,44 @@ def add_recipe_route():
 @app.route('/vegan')
 def vegan():
     recipes=recipe_query_vegan(vegan)
+    recipes.reverse()
     return render_template('vegan.html', recipes=recipes)
 
 @app.route('/breakfast')
 def breakfast():
     recipes=recipe_query_breakfast(breakfast)
+    recipes.reverse()
     return render_template('breakfast.html', recipes=recipes)
 
 @app.route('/dessert')
 def dessert():
     recipes=recipe_query_dessert(dessert)
+    recipes.reverse()
     return render_template('dessert.html', recipes=recipes)
 
 @app.route('/glutenfree')
 def glutenfree():
     recipes=recipe_query_glutenfree(glutenfree)
+    recipes.reverse()
     return render_template('glutenfree.html', recipes=recipes)
+
+@app.route('/keto')
+def keto():
+    recipes=recipe_query_keto(keto)
+    recipes.reverse()
+    return render_template('keto.html', recipes=recipes)
 
 @app.route('/quicksnacks')
 def quicksnacks():
     recipes=recipe_query_quicksnacks(quicksnacks)
+    recipes.reverse()
     return render_template('quicksnacks.html', recipes=recipes)
 
 @app.route('/discover')
 def discover():
     recipes=recipe_query()
     recipes.reverse()
-    return render_template('discover.html', recipes=recipes)
+    return render_template('try.html', recipes=recipes)
 
 @app.route('/try')
 def tryout():

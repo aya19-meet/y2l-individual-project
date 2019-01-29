@@ -1,119 +1,190 @@
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
-  position: absolute; 
-  left: -9999px;
-}
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
-  position: relative;
-  padding-left: 95px;
-  cursor: pointer;
-}
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before,
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
-  content: '';
-  position: absolute;
-}
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
-  left: 0; top: 0;
-  width: 80px; height: 30px;
-  background: #DDDDDD;
-  border-radius: 6px;
-  transition: background-color .2s;
-}
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
-  width: 30px; height: 30px;
-  transition: all .2s;
-  border-radius: 6px 0 0 6px;
-  background: #7F8C9A;
-  top: 0; left: 0;
-}
-
-/* on checked */
-[type="checkbox"]:checked + label:before {
-  background:#34495E; 
-}
-[type="checkbox"]:checked + label:after {
-  background: #39D2B4;
-  top: 0; left: 51px;
-  border-radius: 0 6px 6px 0;
-}
-
-[type="checkbox"]:checked + label .ui,
-[type="checkbox"]:not(:checked) + label .ui:before,
-[type="checkbox"]:checked + label .ui:after {
-  position: absolute;
-  left: 6px;
-  width: 65px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 22px;
-  transition: all .2s;
-}
-
-[type="checkbox"]:not(:checked) + label .ui:before {
-  font-family: 'FontAwesome';
-  content: "\f00d";
-  left: 46px;
-  margin-top: 3px;
-}
-[type="checkbox"]:checked + label .ui:after {
-  font-family: 'FontAwesome';
-  content: "\f00c";
-  color: #e67e22;
-  margin-top: 3px;
-  left: 12px;
-}
-[type="checkbox"]:focus + label:before {
-  border: 0; outline: 0;
-  box-sizing: border-box;
-}
-
-/* Basics */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
-  font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
-  color: #7F8C9A;
-  background: #FCFDFD;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #222;
+    background-color: #7f9191;
 }
-h1, h2 {
-  margin-bottom: 5px;
-  font-weight: normal;
+
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    margin-left:200px;
+    margin-top: 90px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 370px;
+    height: 400px;
+    /*position: absolute;*/
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    
+}
+
+
+.card {
+    /*position: static;*/
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+    background: #e67e22
+    /*background-image: url("background.jpg");*/
+
+
+}
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #e67e22;
+        /*background-image: url("background.jpg");*/
+        text-align: center;
+        color:#FFF;
+        /*line-height: 200px;*/
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
+
+    .card .back {
+        background: #d6d6d4;
+        color: #000000;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label:hover .card {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    -webkit-transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
+.header {
+  color: white;
   text-align: center;
-  color:#aaa;
+  padding: 5px;
+  margin-bottom: 150px;
+  padding-top: 38px;
+  width: 100%;
 }
-h2 {
-  margin: 5px 0 2em;
-  color: #1ABC9C;
+
+.content{
+    font-weight: normal;
+    font-style: oblique;
+    font-size: 20px;
+    /*position: fixed;
+    top:5%;
+    left: 5%;
+    width:90%;
+    height: 74%;
+    overflow: scroll;*/
+    /*overflow-y: scroll;*/
+    
+/*  bottom: 40%;
+*/
+    
+    /*text-align: center*/
+    
 }
-form {
-  width: 80px;
-  margin: 0 auto;
+.subject{
+    text-align: center
+    font-weight: 600;
+    font-style: italic;
+    font-size: 40px;
+    position: fixed;
+    bottom: 40%;
+    width:100%;
+    
+
 }
-h2 + P {
-  text-align: center;
+
+/*.title{
+    display: flex;
+    flex-direction: row;
+}*/
+p.cell{
+    font-style: italic;
+    font-size: 15px;
+    position: fixed;
+    bottom: 5px;
+    width:100%;
+    text-align: center
+    
+    /*position: static;
+    bottom: 10px;*/
 }
-.txtcenter {
-  margin-top: 4em;
-  font-size: .9em;
-  text-align: center;
-  color: #aaa;
+
+.title{
+    text-align: center
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 50px;
+    position: fixed;
+    bottom: 60%;
+    width:100%;
+
 }
-.copy {
- margin-top: 2em; 
+
+.name{
+    text-align: center;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 17px;
+    position: fixed;
+    bottom: 10%;
+    width:100%;
+
 }
-.copy a {
- text-decoration: none;
- color: #e67e22;
+
+.calendar{
+    font-style: italic;
+    font-size: 15px;
+    position: fixed;
+    bottom: 30px;
+    width:100%;
+    text-align: center;
 }
-h1 > a {
-  color: #e67e22;
-  text-decoration: none;
+
+h3{
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    color: black;
+    font-size: 50px;
+    font-family: Tahoma, Geneva, sans-serif;
 }
+
+.position{
+    height: 350px;
+    /*background: #d6d6d4;*/
+    
+}
+
+
+
